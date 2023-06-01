@@ -187,7 +187,7 @@ jobs:
           # которые нужно выполнить на сервере, 
           # с которым установлено соединение
           script: |
-            cd kittygram_final
+            cd infra_sprint1
             # Выполняет pull образов с DockerHub
             sudo docker compose -f docker-compose.production.yml pull
             # Перезапускает все контейнеры в docker compose
