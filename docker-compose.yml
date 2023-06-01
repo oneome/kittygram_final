@@ -18,7 +18,7 @@ services:
     env_file: .env
     volumes:
       - static:/backend_static
-      - media:/media
+      - media:/app/media
 
   frontend:
     env_file: .env
@@ -34,4 +34,4 @@ services:
       - static:/staticfiles
       - media:/media
     ports:
-      - 8080:80
+      - 9000:80
