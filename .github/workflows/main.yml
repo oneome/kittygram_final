@@ -190,6 +190,7 @@ jobs:
             cd kittigram
             # Очистка памяти
             sudo docker system prune
+            y
             npm cache clean
             sudo apt-get clean
             # Выполняет pull образов с DockerHub
