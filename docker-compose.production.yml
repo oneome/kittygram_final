@@ -18,7 +18,7 @@ services:
     env_file: .env
     volumes:
       - static:/backend_static
-      - media:/app/media
+      - media:/app/media/cats/images
   frontend:
     image: 1oneome1/kittigram_frontend  # Качаем с DockerHub
     env_file: .env
@@ -30,6 +30,6 @@ services:
     env_file: .env
     volumes:
       - static:/staticfiles
-      - media:/media
+      - media:/media/cats/images
     ports:
       - 9000:80
