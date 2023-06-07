@@ -1,11 +1,9 @@
 # docker-compose.production.yml
 version: '3'
-
 volumes:
   pg_data:
   static:
   media:
-
 # Всё отличие – заменяем build на image и указываем, какой образ использовать
 services:
   db:
@@ -13,7 +11,6 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
-
   backend:
     image: 1oneome1/kittigram_backend
     env_file: .env
@@ -22,14 +19,12 @@ services:
       - media:/app/media/cats/images
     depends_on:
       - db
-
   frontend:
     image: 1oneome1/kittigram_frontend  # Качаем с DockerHub
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
-
   gateway:
     image: 1oneome1/kittigram_gateway  # Качаем с DockerHub
     env_file: .env
