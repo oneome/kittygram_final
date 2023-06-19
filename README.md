@@ -14,7 +14,7 @@ git add .
 git commit.....  
 git push  
 Проект запушится и развернется на вашем сервере автоматически!!  
-Не забудте добвать секреты на GitHub:  
+Не забудте добавать секреты на GitHub:  
 DOCKER_USERNAME - имя пользователя на DockerHub  
 DOCKER_PASSWORD - пароль на DockerHub  
 HOST - api адрес вашего сервера  
