@@ -13,7 +13,7 @@ services:
       - pg_data:/var/lib/postgresql/data
   
   backend:
-    image: 1oneome1/kittigram_backend
+    image: 1oneome1/kittygram_backend
     env_file: .env
     volumes:
       - static:/backend_static
@@ -22,14 +22,14 @@ services:
       - db
   
   frontend:
-    image: 1oneome1/kittigram_frontend  # Качаем с DockerHub
+    image: 1oneome1/kittygram_frontend  # Качаем с DockerHub
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
   
   gateway:
-    image: 1oneome1/kittigram_gateway  # Качаем с DockerHub
+    image: 1oneome1/kittygram_gateway  # Качаем с DockerHub
     env_file: .env
     volumes:
       - static:/static
