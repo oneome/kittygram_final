@@ -7,6 +7,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$')
 
 DEBUG = os.getenv('DEBUG')
+if DEBUG == 'True':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split()
 
@@ -87,12 +91,18 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = os.getenv('TIME_ZONE', '')
+if TIME_ZONE is None:
+    TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = os.getenv('USE_TZ')
+if USE_TZ == 'False':
+    USE_TZ = False
+else:
+    USE_TZ = True
 
 
 STATIC_URL = '/static/'
