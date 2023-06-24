@@ -6,7 +6,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$')
 
-DEBUG = os.getenv('DEBUG', False)
+DEBUG_STATUS = os.getenv('DEBUG', False)
+if DEBUG_STATUS == 'True':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split()
 
@@ -92,7 +96,11 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = os.getenv('USE_TZ', True)
+USE_TZ_STATUS = os.getenv('USE_TZ', True)
+if USE_TZ_STATUS == 'True':
+    USE_TZ=True
+else:
+    USE_TZ=False
 
 STATIC_URL = '/static/'
 
